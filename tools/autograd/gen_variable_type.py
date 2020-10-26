@@ -168,7 +168,7 @@ GRADIENT_IMPLEMENTED_FOR_COMPLEX = {
     'bmm', 'diagonal', 'cholesky', 'atan', 'log', 'log10', 'log1p', 'log2', 'reciprocal',
     'tan', 'pow', 'rsqrt', 'tanh', 'tanh_backward', 'asinh', 'acosh'
     'dot', 'vdot', 'cholesky', 'atan', 'log', 'log10', 'log1p', 'log2', 'reciprocal',
-    'tan', 'pow', 'rsqrt', 'tanh', 'tanh_backward', 'asinh', 'acosh'
+    'tan', 'pow', 'rsqrt', 'tanh', 'tanh_backward', 'asinh', 'acosh', 'nonzero'
 }
 
 # Some operators invalidate the grad_accumulator. Let's reset it.
