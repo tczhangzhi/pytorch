@@ -1449,7 +1449,11 @@ def _lu_impl(A, pivot=True, get_infos=False, out=None):
 
             - **factorization** (*Tensor*): the factorization of size :math:`(*, m, n)`
 
-            - **pivots** (*IntTensor*): the pivots of size :math:`(*, m)`
+            - **pivots** (*IntTensor*): the pivots of size :math:`(*, min(m, n)`.
+              Given the resulting ``pivots``, the final permutation could be reconstructed by
+              applying :math:`swap(perm[i], perm[pivots[i]])` for :math:`i = 0, \ldots, pivots.size(-1) - 1`,
+              where ``perm`` is initially the identity permutation of :math:`m` elements
+              (essentially this is what :func:`torch.lu_unpack` is doing).
 
             - **infos** (*IntTensor*, *optional*): if :attr:`get_infos` is ``True``, this is a tensor of
               size :math:`(*)` where non-zero values indicate whether factorization for the matrix or
